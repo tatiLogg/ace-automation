@@ -55,6 +55,23 @@ resource "aviatrix_distributed_firewalling_policy_list" "default" {
       aviatrix_web_group.allow_internet_https.uuid
     ]
   }
+    policies {
+    name     = "allow-rfc1918"
+    action   = "PERMIT"
+    priority = 1002
+    protocol = "TCP"
+    logging  = true
+    watch    = false
+    port_ranges {
+      lo = 80
+    }
+    src_smart_groups = [
+      aviatrix_smart_group.rfc1918.uuid
+    ]
+    dst_smart_groups = [
+      aviatrix_smart_group.rfc1918.uuid
+    ]
+  }
   policies {
     name                     = "default-deny-all"
     action                   = "DENY"
