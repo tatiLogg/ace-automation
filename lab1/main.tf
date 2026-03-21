@@ -11,7 +11,7 @@ module "us_east_1_spoke" {
   account          = var.account_name_aws
   ha_gw            = false
   attached         = false
-  single_ip_snat   = false
+  single_ip_snat   = true
 }
 
 module "us_west_2_spoke" {
@@ -27,5 +27,5 @@ module "us_west_2_spoke" {
   account          = var.account_name_aws
   ha_gw            = false
   attached         = false
-  single_ip_snat   = false
+  single_ip_snat   = true
 }
