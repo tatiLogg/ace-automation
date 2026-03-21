@@ -1,4 +1,14 @@
 
+data "terraform_remote_state" "lab1" {
+  backend = "remote"
+  config = {
+    Organization = "AVXUseCases"
+    workspaces = {
+      name = "ace-automation-lab1"
+    }
+  }
+}
+
 
 module "backbone" {
   source  = "terraform-aviatrix-modules/backbone/aviatrix"
