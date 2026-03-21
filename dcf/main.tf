@@ -1,5 +1,9 @@
 locals {
-  allowed_https_domains = []
+  allowed_https_domains = [    
+    "aviatrix.com",
+    "*.amazonaws.com",
+    "cloud.google.com",
+    "*.microsoft.com"]
 }
 
 resource "aviatrix_web_group" "allow_internet_https" {
