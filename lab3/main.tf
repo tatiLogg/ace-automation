@@ -4,7 +4,11 @@ data "terraform_remote_state" "lab1" {
   config = {
     organization = "AVXUseCases"
     workspaces = {
+<<<<<<< HEAD
+      name = "ace-automation-lab1"
+=======
       name = "ace-automation-lab-1"
+>>>>>>> d016759fbc7d780af708695bed8fca95079fe0b9
     }
   }
 }
